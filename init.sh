@@ -10,5 +10,6 @@ duplicity \
 	 --s3-unencrypted-connection \
 	 --volsize 150 \
 	 --encrypt-key $ENCRYPT_KEY \
+	--sign-key=$ENCRYPT_KEY \
 	$SOURCE_PATH \
 	$REMOTE_URL
