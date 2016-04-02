@@ -9,7 +9,8 @@ duplicity \
 	 --ssl-no-check-certificate \
 	 --s3-unencrypted-connection \
 	 --volsize 150 \
+	 --gpg-options "--yes --batch --no-tty" \
 	 --encrypt-key $ENCRYPT_KEY \
-	--sign-key=$ENCRYPT_KEY \
+	 --sign-key $ENCRYPT_KEY \
 	$SOURCE_PATH \
 	$REMOTE_URL
