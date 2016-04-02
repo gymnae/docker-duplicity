@@ -12,7 +12,6 @@ ENV HOME=/home/duplicity
 
 # prepare init script for start
 ADD init.sh /init.sh
-RUN chmod +x /init.sh & chown duplicity /init.sh
+RUN chmod +x /init.sh
 #CMD ["/init.sh"]
-USER duplicity
 CMD ["duply"]
