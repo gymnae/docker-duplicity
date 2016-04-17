@@ -1,5 +1,6 @@
+#!/bin/sh
 #copy the config file
-/tmp/conf /home/duplicity/.duply/$CONFNAME/conf
+cp /tmp/conf /home/duplicity/.duply/$CONFNAME/conf
 
 #gpg config
 sed -i.bak "s;GPGKEY;$GPGKEY;g" /home/duplicity/.duply/$CONFNAME/conf
@@ -12,6 +13,11 @@ sed -i.bak "s;_backend_password_;$BACKENDPASSWORD;g" /home/duplicity/.duply/$CON
 #source
 sed -i.bak "s;source;$SOURCE_PATH;g" /home/duplicity/.duply/$CONFNAME/conf
 
-#target
-sed -i.bak "s;target;$REMOTE_URL;g" /home/duplicity/.duply/$CONFNAME/conf
+#scheme
+sed -i.bak "s;backuptarget;$SCHEME;g" /home/duplicity/.duply/$CONFNAME/conf
 
+#extra param
+sed -i.bak "s;duply_extra;$DUPLY_EXTRA_PARAM;g" /home/duplicity/.duply/$CONFNAME/conf
+
+#do the backup
+duply $CONFNAME backup

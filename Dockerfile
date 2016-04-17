@@ -14,4 +14,4 @@ ENV HOME=/home/duplicity
 ADD init.sh /init.sh
 ADD conf /tmp/conf
 RUN chmod +x /init.sh
-CMD ["duply"]
+CMD ["/init.sh"]

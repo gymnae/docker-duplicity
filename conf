@@ -40,7 +40,7 @@ GPG_PW='GPGPW'
 #   or "--homedir ~/.duply" - keep keyring and gpg settings duply specific
 #   or "--pinentry-mode loopback" - needed for GPG 2.1+ _and_
 #      also enable allow-loopback-pinentry in your .gnupg/gpg-agent.conf
-GPG_OPTS='--pinentry-mode loopback'
+GPG_OPTS='--compress-algo=bzip2 --pinentry-mode loopback'
 
 # disable preliminary tests with the following setting
 #GPG_TEST='disabled'
@@ -61,7 +61,7 @@ GPG_OPTS='--pinentry-mode loopback'
 #     http://en.wikipedia.org/wiki/Url_encoding
 #   if you define the credentials as TARGET_USER, TARGET_PASS below duply
 #   will try to url_encode them for you if the need arises.
-TARGET='scheme://user[:password]@host[:port]/[/]path'
+TARGET='backuptarget'
 # optionally the username/password can be defined as extra variables
 # setting them here _and_ in TARGET results in an error
 TARGET_USER='_backend_username_'
@@ -155,4 +155,4 @@ ARCH_DIR=/home/duplicity/duply/.duply-cache
 
 # more duplicity command line options can be added in the following way
 # don't forget to leave a separating space char at the end
-DUPL_PARAMS="$DUPL_PARAMS $DUPLY_EXTRA_PARAM"
+DUPL_PARAMS="$DUPL_PARAMS duply_extra"
