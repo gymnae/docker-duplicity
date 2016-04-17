@@ -1,3 +1,6 @@
+#copy the config file
+/tmp/conf /home/duplicity/.duply/$CONFNAME/conf
+
 #gpg config
 sed -i.bak "s;GPGKEY;$GPGKEY;g" /home/duplicity/.duply/$CONFNAME/conf
 sed -i.bak "s;GPGPW;$GPGPW;g" /home/duplicity/.duply/$CONFNAME/conf
