@@ -1,16 +1,14 @@
-#!/bin/sh
-duplicity \
-	 --verbosity 8 \
-	 --s3-use-ia \
-	 --s3-use-new-style  \
-	 --s3-use-server-side-encryption \
-	 --s3-european-buckets \
-	 --allow-source-mismatch \
-	 --ssl-no-check-certificate \
-	 --s3-unencrypted-connection \
-	 --volsize 150 \
-	 --gpg-options "--yes --batch --no-tty" \
-	 --encrypt-key $ENCRYPT_KEY \
-	 --sign-key $ENCRYPT_KEY \
-	$SOURCE_PATH \
-	$REMOTE_URL
+#gpg config
+sed -i.bak "s;GPGKEY;$GPGKEY;g" /home/duplicity/.duply/$CONFNAME/conf
+sed -i.bak "s;GPGPW;$GPGPW;g" /home/duplicity/.duply/$CONFNAME/conf
+
+#backend config
+sed -i.bak "s;_backend_username_;$BACKENDUSERNAME;g" /home/duplicity/.duply/$CONFNAME/conf
+sed -i.bak "s;_backend_password_;$BACKENDPASSWORD;g" /home/duplicity/.duply/$CONFNAME/conf
+
+#source
+sed -i.bak "s;source;$SOURCE_PATH;g" /home/duplicity/.duply/$CONFNAME/conf
+
+#target
+sed -i.bak "s;target;$REMOTE_URL;g" /home/duplicity/.duply/$CONFNAME/conf
+
