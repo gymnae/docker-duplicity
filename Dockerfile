@@ -2,7 +2,7 @@ FROM gymnae/alpine-base
 MAINTAINER Gunnar Falk <docker@grundstil.de>
 
 # install base packages
-RUN apk-install duply py-boto openssl py-crypto py-pip  \
+RUN apk-install duply py-boto openssl py-crypto py2-pip  \
  && adduser -D -u 1999 duplicity \
  && chmod -R go+rwx /home/duplicity/
 
