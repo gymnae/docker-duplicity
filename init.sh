@@ -1,4 +1,8 @@
 #!/bin/sh
+
+# create the config folder, if not already present
+mkdir -p /home/duplicity/.duply/$CONFNAME
+
 #copy the config file
 cp /tmp/conf /home/duplicity/.duply/$CONFNAME/conf
 
