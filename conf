@@ -115,7 +115,7 @@ MAX_AGE=6M
 # set the size of backup chunks to VOLSIZE MB instead of the default 25MB.
 # VOLSIZE must be number of MB's to set the volume size to.
 # Uncomment the following two lines to enable this setting. 
-VOLSIZE=150
+VOLSIZE=chunksize
 DUPL_PARAMS="$DUPL_PARAMS --volsize $VOLSIZE "
 
 # verbosity of output (error 0, warning 1-2, notice 3-4, info 5-8, debug 9)
