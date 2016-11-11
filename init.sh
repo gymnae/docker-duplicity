@@ -23,5 +23,8 @@ sed -i.bak "s;backuptarget;$SCHEME;g" /home/duplicity/.duply/$CONFNAME/conf
 #extra param
 sed -i.bak "s;duply_extra;$DUPLY_EXTRA_PARAM;g" /home/duplicity/.duply/$CONFNAME/conf
 
+#chunk size
+sed -i.bak "s;chunksize;$chunksize;g" /home/duplicity/.duply/$CONFNAME/conf
+
 #do the backup
 duply $CONFNAME backup
