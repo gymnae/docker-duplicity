@@ -8,6 +8,7 @@ RUN apk-install \
  openssl \
  py-crypto \
  py-pip  \
+ grep \
  && adduser -D -u 1999 duplicity \
  && chmod -R go+rwx /home/duplicity/
 
