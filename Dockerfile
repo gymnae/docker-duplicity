@@ -1,8 +1,13 @@
-FROM gymnae/alpine-base
+FROM gymnae/alpine-base:master
 MAINTAINER Gunnar Falk <docker@grundstil.de>
 
 # install base packages
-RUN apk-install duply py-boto openssl py-crypto py2-pip  \
+RUN apk-install \
+ duply \
+ py-boto \
+ openssl \
+ py-crypto \
+ py-pip  \
  && adduser -D -u 1999 duplicity \
  && chmod -R go+rwx /home/duplicity/
 
