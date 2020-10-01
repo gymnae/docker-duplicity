@@ -13,7 +13,7 @@ RUN apk-install \
  && chmod -R go+rwx /home/duplicity/
  
 # workaround for alpine linux missing py-fasterners
-RUN pip install fasteners
+RUN pip install fasteners future
  
 ENV HOME=/home/duplicity
 #VOLUME /home/duplicity/.cache/duplicity
