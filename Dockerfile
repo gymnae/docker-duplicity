@@ -4,16 +4,16 @@ MAINTAINER Gunnar Falk <docker@grundstil.de>
 # install base packages
 RUN apk-install \
  duply \
- py-boto \
+ py3-boto3 \
  openssl \
- py-crypto \
- py-pip  \
+ py3-cryptography \
+ py3-pip  \
  grep \
  && adduser -D -u 1999 duplicity \
  && chmod -R go+rwx /home/duplicity/
  
 # workaround for alpine linux missing py-fasterners
-RUN pip install fasteners future
+RUN pip3 install fasteners future
  
 ENV HOME=/home/duplicity
 #VOLUME /home/duplicity/.cache/duplicity
