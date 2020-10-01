@@ -2,7 +2,7 @@ FROM gymnae/alpine-base:master
 MAINTAINER Gunnar Falk <docker@grundstil.de>
 
 # install base packages
-RUN apk-install \
+RUN apk add --no-cache \
  duply \
  py3-boto3 \
  openssl \
