@@ -1,4 +1,4 @@
-FROM gymnae/alpine-base:master
+FROM gymnae/alpine-base:latest
 MAINTAINER Gunnar Falk <docker@grundstil.de>
 
 # install base packages
